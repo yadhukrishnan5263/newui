@@ -55,11 +55,11 @@ class _fitnessmainscreenstate extends State<fitnessmainscreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           SizedBox(height: 50,),
-                          mediview(),
+                         mediview(),
                           SizedBox(height: 50,),
                           bodymeasure(),
                           SizedBox(height: 50,),
-                          water()
+                          water(),
 
                         ],
 
