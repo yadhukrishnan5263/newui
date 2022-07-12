@@ -252,6 +252,7 @@ class HotelBooking extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Container(
           height: 130,
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(boxShadow: [
               BoxShadow(
                   color: Colors.white24,
@@ -264,77 +265,81 @@ class HotelBooking extends StatelessWidget {
                   blurRadius: 10,
                   spreadRadius: 0),
             ], borderRadius: BorderRadius.circular(10), color: Colors.white),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                width: 130,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft:Radius.circular(10),bottomLeft:Radius.circular(10)),
-                  image: DecorationImage(image: NetworkImage(images[index]),fit:BoxFit.cover,)
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 130,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topLeft:Radius.circular(10),bottomLeft:Radius.circular(10)),
+                    image: DecorationImage(image: NetworkImage(images[index]),fit:BoxFit.cover,)
+                  ),
                 ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 2),
-                    child: Text(
-                      hotelname[index],
-                      style: TextStyle(fontWeight: FontWeight.bold),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8,right: 8),
-                    child: Text(
-                      "Five Star Hotel",
-                      style: TextStyle(fontSize: 10, color: Colors.black54),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 2),
+                      child: Text(
+                        hotelname[index],
+                        style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8,right: 8,top: 5,bottom: 2),
-                    child: Text(
-                      "\$180 / night",
-                      style: TextStyle(color: Colors.blue, fontSize: 12),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8,right: 8),
+                      child: Text(
+                        "Five Star Hotel",
+                        style: TextStyle(fontSize: 10, color: Colors.black54),
+                      ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(Icons.directions_car,color: Colors.blue,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8,right: 8,top: 5,bottom: 2),
+                      child: Text(
+                        "\$180 / night",
+                        style: TextStyle(color: Colors.blue, fontSize: 12),
                       ),
-                      Icon(Icons.bedroom_baby_outlined,color: Colors.blue,),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(Icons.restaurant,color: Colors.blue,),
-                      ),
-                      Icon(Icons.wifi,color: Colors.blue,),
-                    ],
-                  )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                        color: Colors.white24,
-                        offset: Offset(-10, -10),
-                        blurRadius: 10,
-                        spreadRadius: 0),
-                    BoxShadow(
-                        color: Colors.black54,
-                        offset: Offset(10, 10),
-                        blurRadius: 10,
-                        spreadRadius: 0),
-                  ], borderRadius: BorderRadius.circular(10), color: Colors.blue),
-                  height: 40,
-                  width: 90,
-                  child: Center(child: Text("Book Now",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.directions_car,color: Colors.blue,),
+                        ),
+                        Icon(Icons.bedroom_baby_outlined,color: Colors.blue,),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.restaurant,color: Colors.blue,),
+                        ),
+                        Icon(Icons.wifi,color: Colors.blue,),
+                      ],
+                    )
+                  ],
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(boxShadow: [
+                      BoxShadow(
+                          color: Colors.white24,
+                          offset: Offset(-10, -10),
+                          blurRadius: 10,
+                          spreadRadius: 0),
+                      BoxShadow(
+                          color: Colors.black54,
+                          offset: Offset(10, 10),
+                          blurRadius: 10,
+                          spreadRadius: 0),
+                    ], borderRadius: BorderRadius.circular(10), color: Colors.blue),
+                    height: 40,
+                    width: 90,
+                    child: Center(child: Text("Book Now",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       )
